@@ -51,4 +51,4 @@ The images used in the CloudShell demo are included
 ![S3 Bucket](./Images/AWS-S3-imgRekog.png)
 
 ## Contents of S3 Bucket
-![Contents](./Images/S3-Bucket-contents/S3-Bucket-contents.png)
+![Contents](./Images/S3-bucket-contents/S3-Bucket-contents.png)
