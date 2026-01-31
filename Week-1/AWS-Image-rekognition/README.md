@@ -35,25 +35,20 @@ python image-rekog.py
 
 ## 📊 Sample Images
 
-The images used in the CloudShell demo are included locally in the `s3-bucket/` folder.
+The images used in the CloudShell demo are included
 
-![car sample](./s3-bucket/car.png)
+![car sample](./Images/S3-bucket-contents/car.png)
 
-![coffee sample](./s3-bucket/coffee.png)
+![coffee sample](./Images/S3-bucket-contents/coffee.png)
 
-![dog sample](./s3-bucket/dog.png)
-
-> If the images still don't render in your Markdown preview, try one of the following:
->
-> - Verify the `s3-bucket/` folder exists at the repository root and contains the listed files.
-> - Ensure your editor preview reads files from the workspace root (some previewers use the file directory as the base path).
+![dog sample](./Images/S3-bucket-contents/dog.png)
 
 ## Rekog Results
 
-![alt text](AWS-img-rekog.png)
+![Rekognition Resuts](./Images/AWS-img-rekog.png)
 
 ## S3 Bucket
-![alt text](AWS-S3-imgRekog.png)
+![S3 Bucket](./Images/AWS-S3-imgRekog.png)
 
 ## Contents of S3 Bucket
-![alt text](S3-Bucket-contents.png)
+![Contents](./Images/S3-Bucket-contents/S3-Bucket-contents.png)
