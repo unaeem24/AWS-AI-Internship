@@ -1,0 +1,51 @@
+import pytesseract
+from pdf2image import convert_from_path
+from PIL import Image
+from transformers import AutoProcessor, AutoModelForSequenceClassification
+import torch
+
+# --- 1. CONFIGURATION ---
+# Your verified paths
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+POPPLER_PATH = r'C:\Popplar\poppler-25.12.0\Library\bin'
+
+def categorize_document(pdf_path):
+    print(f"--- Starting Processing for: {pdf_path} ---")
+    
+    try:
+        # --- 2. CONVERT PDF TO IMAGE ---
+        print("Step 1: Converting PDF to Image...")
+        images = convert_from_path(pdf_path, poppler_path=POPPLER_PATH, first_page=1, last_page=1)
+        image = images[0].convert("RGB")
+
+        # --- 3. LOAD MODEL & PROCESSOR ---
+        # Using the base LayoutLMv3 model
+        print("Step 2: Loading LayoutLMv3 Model (this may take a moment)...")
+        model_id = "microsoft/layoutlmv3-base"
+        processor = AutoProcessor.from_pretrained(model_id, apply_ocr=True) # Uses Tesseract automatically
+        model = AutoModelForSequenceClassification.from_pretrained(model_id)
+
+        # --- 4. PREPARE INPUTS ---
+        # This combines the Image + OCR (Text & Boxes) for the AI
+        inputs = processor(image, return_tensors="pt")
+
+        # --- 5. AI CLASSIFICATION ---
+        print("Step 3: Analyzing Layout and Content...")
+        with torch.no_grad():
+            outputs = model(**inputs)
+        
+        # Get the highest confidence score
+        logits = outputs.logits
+        predicted_class_idx = logits.argmax(-1).item()
+        
+        print(f"\n✅ SUCCESS!")
+        print(f"The AI categorized this document as Class Index: {predicted_class_idx}")
+        print("Note: In a production environment, you would map this index to 'Invoice', 'Report', etc.")
+
+    except Exception as e:
+        print(f"\n❌ ERROR: {e}")
+
+if __name__ == "__main__":
+    # Test it with your actual intern document
+    test_pdf = r"C:\Users\hp\OneDrive - Cloudelligent LLC\Task Documentation\AI Intern Plan-details.pdf"
+    categorize_document(test_pdf)
