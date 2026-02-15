@@ -3,6 +3,7 @@ from pdf2image import convert_from_path
 from PIL import Image
 from transformers import AutoProcessor, AutoModelForSequenceClassification
 import torch
+import os
 
 # --- 1. CONFIGURATION ---
 # Your verified paths
@@ -46,6 +47,22 @@ def categorize_document(pdf_path):
         print(f"\n❌ ERROR: {e}")
 
 if __name__ == "__main__":
-    # Test it with your actual intern document
-    test_pdf = r"C:\Users\hp\OneDrive - Cloudelligent LLC\Task Documentation\AI Intern Plan-details.pdf"
-    categorize_document(test_pdf)
+
+    # 1. Set the path to your FOLDER, not a file
+    folder_path = r"C:\Users\hp\OneDrive - Cloudelligent LLC\AWS-AI-Internship\Week-2\pdf-classifier\test_samples"
+    
+    # 2. Get a list of all files ending in .pdf
+    all_files = os.listdir(folder_path)
+    pdf_files = [f for f in all_files if f.lower().endswith('.pdf')]
+    
+    print(f"Found {len(pdf_files)} PDF files to process.")
+
+    # 3. The Loop: Run your function for every file found
+    for filename in pdf_files:
+        # Create the full path (Folder + Filename)
+        full_file_path = os.path.join(folder_path, filename)
+        
+        # Now run your existing function
+        categorize_document(full_file_path)
+        print("-" * 30)
+    
