@@ -1,0 +1,11 @@
+{
+    "metadata": {
+        "source_file": "CV (2).pdf",
+        "category": "Project Report",
+        "confidence_score": 0.5907,
+        "model_used": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli"
+    },
+    "extracted_data": {
+        "summary": "Electrical Engineer"
+    }
+}
