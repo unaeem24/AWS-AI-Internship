@@ -17,7 +17,7 @@ LABELS = [
 QUESTIONS = {
     "financial invoice with billing details and total amount": ["What is the total amount?", "What is the invoice number?"],
     "personal resume or curriculum vitae of a job candidate": ["What is the candidate's name?", "What is the highest degree?"],
-    "business project status report or corporate documentation": ["What is the project name?", "Who is the manager?"],
+    "business project status report or corporate documentation": ["What is the project name?", "Who is the Faculty Member?"],
     "academic scientific research paper or journal article": ["What is the title?", "Who is the lead author?"],
     "personal or professional email correspondence": ["Who is the sender?", "What is the subject?"]
 }
