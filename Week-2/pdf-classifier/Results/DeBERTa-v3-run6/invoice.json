@@ -1,0 +1,8 @@
+{
+    "file": "invoice.pdf",
+    "category": "financial invoice with billing details and total amount",
+    "details": {
+        "amount": "2125.0",
+        "number": "\n107"
+    }
+}
