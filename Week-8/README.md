@@ -1,7 +1,3 @@
-Here’s a cleaner, well-structured **README.md** version with proper hierarchy, bold headings, spacing, and a more professional GitHub-friendly format:
-
----
-
 # 🚀 Week 8: End-to-End Customer Churn Prediction
 
 ## 📌 Project Overview
@@ -16,7 +12,6 @@ The workflow covers the complete ML lifecycle:
 * Batch inference
 * Performance evaluation
 
----
 
 ## 📋 Table of Contents
 
@@ -59,7 +54,6 @@ Transform raw telecom data into a machine-learning-ready format.
   * `test.csv`
 * Uploaded datasets to **Amazon S3** for SageMaker access
 
----
 
 ## ⚙️ 2. Model Training & Hyperparameter Optimization (HPO)
 
@@ -87,7 +81,6 @@ Find the most accurate model using SageMaker’s distributed infrastructure.
 
   * Churners vs Non-churners
 
----
 
 ## 📄 3. The Inference Script (train.py)
 
@@ -138,8 +131,6 @@ Efficiently process large datasets **without persistent servers**
 * No idle costs
 * Instance **auto-terminates** after completion
 
----
-
 ## 📊 5. Performance Evaluation
 
 ### 📈 Model Analysis
@@ -157,8 +148,6 @@ Efficiently process large datasets **without persistent servers**
 * Enabled targeted **retention strategies**
 * Produced a **Retention Action List** for marketing teams
 
----
-
 ## 🏁 Conclusion
 
 This project demonstrates a **production-ready ML pipeline** using Amazon SageMaker, covering:
@@ -168,10 +157,3 @@ This project demonstrates a **production-ready ML pipeline** using Amazon SageMa
 * Scalable inference
 * Business-driven insights
 
----
-
-If you want, I can also:
-
-* Add **badges (AWS, Python, SageMaker)**
-* Include **architecture diagrams**
-* Or convert this into a **portfolio-ready GitHub project** 👍
